@@ -1,8 +1,13 @@
 module Main exposing (..)
 
-import Html exposing (h1, text)
+import App.App exposing (initialModel, update, view, Model, Msg)
+import Html exposing (Html)
 
 
-main : Html.Html msg
+main : Program Never Model Msg
 main =
-    h1 [] [ text "Hello World" ]
+    Html.beginnerProgram
+        { model = initialModel
+        , view = view
+        , update = update
+        }
